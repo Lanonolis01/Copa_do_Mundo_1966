@@ -1,30 +1,303 @@
-<!DOCTYPE html>
-<!--Copiem este código para o vscode-->
-<!--Caso tenha dúvidas sobre o código, me chama no zap-->
-<html lang="pt-br">
 
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <viewport content="width=device-width, initial-scale=1.0"> 
-        <!--Essa linha é para o site se adaptar a qualquer tipo de tela.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa do Mundo 1966</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-        <title>Tecnologias no ano de 1966</title>
-        <style>
-            body {
-                background-color: grey;
-            }
+    <style>
+        :root {
+            --vermelho: rgb(200, 16, 46);
+            --azul-escuro: #000033;
+            --branco: #ffffff;
+            --cinza-claro: #f4f4f4;
+            --sombra: rgba(0, 0, 51, 0.15);
+        }
 
-            header {
-                height: 30vh;
-                /*Vh é uma unidade de medida relativa a altura da tela, que nesse caso é 30% da altura total,
-                usei isso para não ter risco de ficar grande demais em outras resoluções*/
-            }
-        </style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--azul-escuro);
+        }
+
+        /* ── HEADER ── */
+        header {
+            height: 500px;
+            background-image: url('https://imgs.search.brave.com/Ua7nP_6CVauIywPlVmXgil498cCuDZRAUWl6AOl-BMI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hdGhs/ZXQub3JnL2pkZC9w/dWJsaWMvZG9jdW1l/bnRzL2F0aGxldC9m/b290YmFsbC9nYW1l/cy80NjB4Mjc2LzI0/MTEuanBn');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--branco);
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,51,0.55), rgba(200,16,46,0.4));
+        }
+
+        header h1 {
+            z-index: 1;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 72px;
+            letter-spacing: 6px;
+            text-shadow: 3px 3px 16px rgba(0,0,0,0.7);
+            margin: 0;
+        }
+
+        header p.subtitulo {
+            z-index: 1;
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-top: 10px;
+        }
+
+        /* ── MENU ── */
+        nav.menu-container {
+            background-color: var(--azul-escuro);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--vermelho);
+        }
+
+        .menu-lista {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .menu-lista li a {
+            display: block;
+            color: var(--branco);
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            letter-spacing: 2px;
+            padding: 14px 0;
+            border-bottom: 3px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .menu-lista li a:hover {
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+        }
+
+        /* ── SEÇÕES ── */
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--branco);
+            border-left: 5px solid var(--vermelho);
+            border-radius: 4px;
+            box-shadow: 0 6px 20px var(--sombra);
+        }
+
+        .container-imagem-texto {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .imagem-esquerda {
+            max-width: 180px;
+            border-radius: 4px;
+            border: 3px solid var(--azul-escuro);
+            flex-shrink: 0;
+        }
+
+        .texto-direito h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            color: var(--vermelho);
+            margin: 0 0 10px;
+        }
+
+        .texto-direito p {
+            line-height: 1.75;
+            color: #222;
+            margin: 0;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--azul-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 4px solid var(--vermelho);
+        }
+
+        footer .footer-escola {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            letter-spacing: 4px;
+            color: #ffd700;
+            margin: 0 0 6px;
+        }
+
+        footer .footer-descricao {
+            font-size: 14px;
+            color: rgba(255,255,255,0.65);
+            max-width: 600px;
+            margin: 0 auto 6px;
+            line-height: 1.6;
+        }
+
+        footer .footer-divisor {
+            width: 60px;
+            height: 2px;
+            background: var(--vermelho);
+            margin: 20px auto;
+        }
+
+        footer .footer-membros-titulo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 12px;
+        }
+
+        footer .membros {
+            line-height: 2;
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* ── RESPONSIVO ── */
+        @media (max-width: 768px) {
+            header h1 { font-size: 44px; }
+            .menu-lista { gap: 20px; }
+            .menu-lista li a { font-size: 18px; }
+            .container-imagem-texto { flex-direction: column; text-align: center; }
+            .imagem-esquerda { max-width: 100%; }
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Tecnologias no ano de 1966</h1>
-    <p class="oi">Esta é uma página sobre tecnologias do ano de 1966.</p>
-</body>
 
+    <header>
+        <h1>World Cup 1966</h1>
+        <p class="subtitulo">ETEC Jorge Street &mdash; Trabalho Escolar</p>
+    </header>
+
+    <nav class="menu-container">
+        <ul class="menu-lista">
+            <li><a href="#prologo">Prólogo</a></li>
+            <li><a href="#apresentacao">Apresentação</a></li>
+            <li><a href="#trans-global">Transmissão Global</a></li>
+            <li><a href="#replay">Invenção do Replay</a></li>
+            <li><a href="#capt-cores">Captação a Cores</a></li>
+        </ul>
+    </nav>
+
+    <section id="prologo">
+        <div class="container-imagem-texto">
+            <img src="https://imgs.search.brave.com/uJowFPzlopF9M7fdo8WDj0cSpL8w3vtUy8ZbCU7XOkw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vd2F2ZWJyZWFr/bWVkaWFtaWNyby93/YXZlYnJlYWttZWRp/YW1pY3JvMTQwNi93/YXZlYnJlYWttZWRp/YW1pY3JvMTQwNjE3/MzcxLzI5MDQ3NjM5/LWpvZ2Fkb3ItZGUt/ZnV0ZWJvbC1kYS1p/bmdsYXRlcnJhLXNl/Z3VyYW5kby1ib2xh/LWNvbnRyYS1iYW5k/ZWlyYS1uYWNpb25h/bC1kYS1pbmdsYXRl/cnJhLmpwZz92ZXI9/Ng"
+                 alt="Final 1966" class="imagem-esquerda">
+            <div class="texto-direito">
+                <h2>Prólogo</h2>
+                <p>A Copa do Mundo FIFA de 1966 foi realizada na Inglaterra e teve a seleção da casa como campeã pela primeira vez.
+                    Na final, a Inglaterra venceu a Alemanha Ocidental por 4 a 2 na prorrogação, em um jogo marcado pelo famoso "gol fantasma" de Geoff Hurst.
+                    O torneio também ficou conhecido pela grande atuação de Pelé, mesmo sofrendo muitas faltas e sendo eliminado cedo com a Seleção Brasileira de Futebol.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="apresentacao">
+        <div class="container-imagem-texto">
+            <img src="https://imgs.search.brave.com/yHBN_kDBZAVJTRjqrg8N95bbquhJJNBBAXRY_pKxG5g/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L3Nl/Y3Vsby14eC9pbWFn/ZXMvZS9lYy8xOTY2/X0ZvdG8ucG5nL3Jl/dmlzaW9uL2xhdGVz/dC9zY2FsZS10by13/aWR0aC1kb3duLzI3/Nz9jYj0yMDI1MDcy/MjIzMjMxMyZwYXRo/LXByZWZpeD1wdC1i/cg"
+                 alt="1966" class="imagem-esquerda">
+            <div class="texto-direito">
+                <h2>Apresentação</h2>
+                <p>No ano de 1966, o mundo vivia um período de grandes avanços tecnológicos e mudanças culturais, com destaque para o crescimento da televisão,
+                    das telecomunicações e da corrida espacial.
+                    Esses avanços aproximaram pessoas e países,
+                    permitindo que eventos como a Copa do Mundo FIFA de 1966 fossem acompanhados por milhões de pessoas ao redor do mundo,
+                    mostrando como a tecnologia começava a transformar a comunicação e o entretenimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="trans-global">
+       <div class="container-imagem-texto">
+    <img src="https://imgs.search.brave.com/IDdrd6T__yTNSgRbg_LaZr_j-GI6VNLjzksz8gzC2j0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2VuY2luZXQuY29t/L21lZGlhLzI1OS9i/bG9nLWNvbXVuaWNh/Y2FvLXZpYS1zYXRl/bGl0ZS0yLnBuZw" alt="Transmissão via Satélite" class="imagem-esquerda">
+    <div class="texto-direito">
+        <h2>Transmissão Global via Satélite</h2>
+        <p>A Copa de 1966 foi a primeira a utilizar transmissões via satélite em grande escala, marcando o início da globalização televisiva do futebol.
+            A distribuição das imagens foi viabilizada por satélites recém-lançados, como o Intelsat I (apelidado de Early Bird), o primeiro satélite comercial de telecomunicações do mundo.
+            Antes disso, as imagens chegavam a outros continentes por transporte aéreo de rolos de filmes, atrasando a exibição em dias.
+            Com os satélites, emissoras da Europa puderam enviar os sinais rapidamente — alguns até ao vivo — para as Américas.</p>
+    </div>
+</div>
+    </section>
+        
+    <section id="replay">
+        <div class="container-imagem-texto">
+    <img src="https://imgs.search.brave.com/g4TFCQzml7VoVpNhexT4ZRAhb9wy4IW7KH3A1FchigY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvOTQ4/Njc4MDA4L3ZlY3Rv/ci9yZXBsYXktZmxh/dC1kZXNpZ24tb3Jh/bmdlLXJvdW5kLXZl/Y3Rvci1pY29uLWlu/LWVwcy0xMC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9VkFO/STdFeUJkek94VHFl/YXRxMlRYeFR2SzBX/anNLVnJuT1RiRUpi/RzZIST0" alt="Invenção do Replay" class="imagem-esquerda">
+    <div class="texto-direito">
+        <h2>A Invenção do Replay</h2>
+        <p>Hoje é impossível imaginar uma partida de futebol sem rever os gols ou os lances polêmicos, mas foi em 1966 que isso se tornou realidade para o grande público.
+            A BBC implementou um sistema rudimentar de videotape que permitia reprisar os melhores momentos poucos segundos após acontecerem.
+            Junto com o replay, surgiu também a câmera lenta. Ironicamente, essa tecnologia foi fundamental na própria final: o icônico "gol fantasma" de Geoff Hurst foi incansavelmente reprisado para tentar determinar se a bola havia cruzado a linha do gol.</p>
+    </div>
+</div>
+    </section>
+
+    <section id="capt-cores">
+        <div class="container-imagem-texto">
+    <img src="https://imgs.search.brave.com/fTeKd963sRVme0X9wERH5RtFKCSGUCY_w62vVx2n1io/rs:fit:500:0:1:0/g:ce/aHR0cDovL3Zpc2Fv/Y29tcHV0YWNpb25h/bC5jb20uYnIvd3At/Y29udGVudC91cGxv/YWRzLzIwMjEvMTEv/Y29yZXNfcHJpc21h/XzEtMzAweDMwMC5w/bmc" alt="Captação a Cores" class="imagem-esquerda">
+    <div class="texto-direito">
+        <h2>A Transição para Captação a Cores</h2>
+        <p>A maioria absoluta do público assistiu à Copa de 1966 em televisores preto e branco — a TV a cores só estrearia com força na Copa de 1970, no México. Ainda assim, 1966 serviu como laboratório para essa tecnologia.
+            Diversas câmeras de cinema foram espalhadas pelos estádios rodando filmes a cores de alta resolução, material usado para o documentário oficial "Goal!" (1966).
+            Lançado nos cinemas, foi a primeira vez que milhões de torcedores ao redor do mundo puderam ver os uniformes e o verde do gramado de uma Copa com total nitidez.</p>
+    </div>
+</div>
+    </section>
+
+    <footer>
+        <p class="footer-escola">ETEC Jorge Street</p>
+        <p class="footer-descricao">Projeto desenvolvido para fins educacionais.</p>
+        <p class="footer-descricao">
+            A ideia surgiu a partir de uma atividade escolar, com o objetivo de divulgar informações geográficas e históricas
+            sobre as Copas do Mundo, sendo a de 1966 o tema principal do nosso trabalho.
+            O trabalho foi desenvolvido com base no que nos foi ensinado em sala de aula,
+            tanto na criação do site quanto nas pesquisas realizadas.
+        </p>
+        <div class="footer-divisor"></div>
+        <p class="footer-membros-titulo">Equipe</p>
+        <p class="membros">
+            Guilherme Sampaio<br>
+            Bruno Vieira<br>
+            Alex Zion<br>
+            Enzo Nojima<br>
+            Victor Andrade<br>
+            Felipe Longo
+        </p>
+    </footer>
+
+</body>
 </html>
